@@ -13,6 +13,7 @@ namespace Moonbase
 {
     public partial class FRMNorth : Form
     {
+        // Created variable for log file
         private const string LogFilePath = "log.txt";
         // Constructor for the FRMNorth form
         public FRMNorth()
@@ -22,7 +23,7 @@ namespace Moonbase
         // West button click event
         private void BTNWest_Click(object sender, EventArgs e)
         {
-            LogFormNavigation("West");
+            LogFormNavigation("West"); // Log the navigation action
             FRMWest frm = new FRMWest(); // Create an instance of FRMWest
             this.Hide(); // Hide the current form (FRMNorth)
             frm.Show(); // Show the FRMWest form
@@ -30,7 +31,7 @@ namespace Moonbase
         // East button click event
         private void BTNEast_Click(object sender, EventArgs e)
         {
-            LogFormNavigation("East");
+            LogFormNavigation("East"); // Log the navigation action
             FRMEast frm = new FRMEast(); // Create an instance of FRMEast
             this.Hide(); // Hide the current form (FRMNorth)
             frm.Show(); // Show the FRMEast form
@@ -38,7 +39,7 @@ namespace Moonbase
         // South button click event
         private void BTNSouth_Click(object sender, EventArgs e)
         {
-            LogFormNavigation("South");
+            LogFormNavigation("South"); // Log the navigation action
             FRMSouth frm = new FRMSouth(); // Create an instance of FRMSouth
             this.Hide(); // Hide the current form (FRMNorth)
             frm.Show(); // Show the FRMSouth form
@@ -46,7 +47,7 @@ namespace Moonbase
         // Main button click event
         private void BTNMain_Click(object sender, EventArgs e)
         {
-            LogFormNavigation("Main");
+            LogFormNavigation("Main"); // Log the navigation action
             FRMMain frm = new FRMMain(); // Create an instance of FRMMain
             this.Hide(); // Hide the current form (FRMNorth)
             frm.Show(); // Show the FRMMain form
@@ -56,11 +57,12 @@ namespace Moonbase
         {
 
         }
+        // Method to log form navigation to a text file
     private void LogFormNavigation(string formName)
     {
         using (StreamWriter writer = new StreamWriter(LogFilePath, true))
         {
-            writer.WriteLine(formName);
+            writer.WriteLine(formName); // Write the form name to the log file
         }
     }
 }
