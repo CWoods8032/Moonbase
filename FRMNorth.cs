@@ -17,16 +17,27 @@ namespace Moonbase
         private const string LogFilePath = "log.txt";
 
         String[] northDetails = new string[3]
-        {
-            "Livingquarters.jpg", // Background path
-            "Living Quarters", // Location name
-            "North room of moonbase", // Location Description
+        {   // Background path
+            "Livingquarters.jpg", 
+             // Location name
+            "Living Quarters",
+            // Location Description
+            "Arriving to the North part of the moonbase there are several living quarters. There is a ladder that leads up to a comfy bed. Plenty of storage for clothes and other personal items.\r\n\r\nComfortable lounging area to do all sorts of hobbies like reading. A rug in the middle that's comfortable to the touch. Seems like a very nice area to live.\r\n", 
         };
         // Constructor for the FRMNorth form
         public FRMNorth()
         {
-            InitializeComponent();    
-    }
+            InitializeComponent();
+            LoadNorthDetails();
+        }
+
+        // Method to Load Details
+        private void LoadNorthDetails()
+        {
+            GBInfoNorth.Text = northDetails[0].ToString(); // Assign first element of Array
+            TBRoomInfoNorth.Text = northDetails[1].ToString(); // Assign second element of Array
+            TBRoomDesNorth.Text = northDetails[2].ToString(); // Assign third element of Array
+        }
         // West button click event
         private void BTNWest_Click(object sender, EventArgs e)
         {

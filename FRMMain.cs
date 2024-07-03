@@ -17,15 +17,26 @@ namespace Moonbase
         private const string LogFilePath = "log.txt";
 
         String[] mainDetails = new string[3]
-        {
-            "Moonbase.jpg", // Background path
-            "Entertainment Room", // Location name
-            "Located in center of moonbase", // Location Description
+        {// Background path
+            "Moonbase.jpg", 
+            // Location name
+            "Entertainment Room", 
+            // Location Description
+            "Walking into this room you can see chairs, tables, and a bar. The bar consists of all types of drinks in bags. The seated areas with tables have games of cards and checkers. \r\n\r\nYou can also choose any other board games if you wish. It seems rather busy and a very socializing experience.\r\n", 
         };
         // Constructor for the FRMMain form
         public FRMMain()
         {
             InitializeComponent();
+            LoadMainDetails();
+        }
+
+        // Method to load details
+        private void LoadMainDetails()
+        {
+            GBInfoMain.Text = mainDetails[0].ToString(); // Assign first element of Array
+            TBRoomInfoMain.Text = mainDetails[1].ToString(); // Assign second element of Array
+            TBRoomDesMain.Text = mainDetails[2].ToString(); // Assign third element of Array
         }
         // North button click event
         private void BTNNorth_Click(object sender, EventArgs e)

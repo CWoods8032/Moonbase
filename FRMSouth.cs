@@ -17,15 +17,26 @@ namespace Moonbase
         private const string LogFilePath = "log.txt";
 
         String[] southDetails = new string[3]
-        {
-            "Moonbaseentrance.jpg", // Background path
-            "Main Entrance", // Location name
-            "South room of moonbase", // Location Description
+        {    // Background path
+            "Moonbaseentrance.jpg",
+            // Location name
+            "Main Entrance",
+            // Location Description
+            "To the South of main is the main entrance to the moonbase. It has spacesuits, first aid, bathrooms and so on. Researchers can go outside to investigate the moon or maybe just bounce around.\r\n\r\nIt also keeps the number of personnel that are currently in out at this moment. Keeping track of individuals is important. Especially when it comes to allowing people on the moons surface. The outside has vehicles waiting as a form of transportation.\r\n", 
         };
         // Constructor for the FRMSouth form
         public FRMSouth()
         {
             InitializeComponent();
+            LoadSouthDetails();
+        }
+
+        // Method to Load Details
+        private void LoadSouthDetails()
+        {
+            GBInfoSouth.Text = southDetails[0].ToString(); // Assigns first element of Array
+            TBRoomInfoSouth.Text = southDetails[1].ToString(); // Assigns second element of Array
+            TBRoomDesSouth.Text = southDetails[2].ToString(); // Assigns third element of Array
         }
         // Main button click event
         private void BTNMain_Click(object sender, EventArgs e)

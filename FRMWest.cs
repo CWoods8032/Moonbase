@@ -18,14 +18,25 @@ namespace Moonbase
         private const string LogFilePath = "log.txt";
 
         String[] westDetails = new string[3]
-        {
-            "Lab.jpg", // Background path
-            "Labratory", // Location name
-            "West room of moonbase", // Location Description
+        {    // Background path
+            "Lab.jpg",
+            // Location name
+            "Labratory",
+            // Location Description
+            "Arriving on the west side has a full blown lab with all the bells and whistles. This is where all the magic happens. It seems to be quite busy as people are walking in and out constantly.\r\n\r\nIt has several high tech computers, vials, tubes, virtual screens and so on. It seems like everyone is happy with their work and believe they are making a difference. Not sure exactly what's being worked on and everyone says its top secret.\r\n",
         };
         public FRMWest()
         {
             InitializeComponent();
+            LoadWestDetails();
+        }
+
+        // Method to Load Details
+        private void LoadWestDetails()
+        {
+            GBInfoWest.Text = westDetails[0].ToString(); // Assigns first element of Array
+            TBRoomInfoWest.Text = westDetails[1].ToString(); // Assigns second element of Array
+            TBRoomDesWest.Text = westDetails[2].ToString(); // Assings third element of Array
         }
         // Main button click event
         private void BTNMain_Click(object sender, EventArgs e)
