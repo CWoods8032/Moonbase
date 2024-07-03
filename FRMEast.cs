@@ -15,6 +15,13 @@ namespace Moonbase
     {
         // Created variable for log file
         private const string LogFilePath = "log.txt";
+
+        String[] eastDetails = new string[3]
+        {
+            "Kitchen.jpg", // Background path
+            "Kitchen", // Location name
+            "East room of moonbase", // Location description
+        };
         // Constructor for the FRMEast form
         public FRMEast()
         {

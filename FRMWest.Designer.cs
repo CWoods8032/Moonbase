@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMWest));
             this.GBNav = new System.Windows.Forms.GroupBox();
+            this.BTNNorth = new System.Windows.Forms.Button();
+            this.BTNWest = new System.Windows.Forms.Button();
             this.BTNEast = new System.Windows.Forms.Button();
             this.BTNSouth = new System.Windows.Forms.Button();
             this.GBInfoWest = new System.Windows.Forms.GroupBox();
@@ -38,8 +40,6 @@
             this.TBRoomInfoWest = new System.Windows.Forms.TextBox();
             this.LABRoomWest = new System.Windows.Forms.Label();
             this.BTNMain = new System.Windows.Forms.Button();
-            this.BTNWest = new System.Windows.Forms.Button();
-            this.BTNNorth = new System.Windows.Forms.Button();
             this.GBNav.SuspendLayout();
             this.GBInfoWest.SuspendLayout();
             this.SuspendLayout();
@@ -47,20 +47,41 @@
             // GBNav
             // 
             this.GBNav.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.GBNav.Controls.Add(this.BTNMain);
             this.GBNav.Controls.Add(this.BTNNorth);
             this.GBNav.Controls.Add(this.BTNWest);
             this.GBNav.Controls.Add(this.BTNEast);
             this.GBNav.Controls.Add(this.BTNSouth);
             this.GBNav.Location = new System.Drawing.Point(12, 62);
             this.GBNav.Name = "GBNav";
-            this.GBNav.Size = new System.Drawing.Size(233, 199);
+            this.GBNav.Size = new System.Drawing.Size(260, 199);
             this.GBNav.TabIndex = 2;
             this.GBNav.TabStop = false;
             this.GBNav.Text = "Personal Nav Device";
             // 
+            // BTNNorth
+            // 
+            this.BTNNorth.Location = new System.Drawing.Point(90, 33);
+            this.BTNNorth.Name = "BTNNorth";
+            this.BTNNorth.Size = new System.Drawing.Size(78, 34);
+            this.BTNNorth.TabIndex = 4;
+            this.BTNNorth.Text = "North";
+            this.BTNNorth.UseVisualStyleBackColor = true;
+            this.BTNNorth.Click += new System.EventHandler(this.BTNNorth_Click);
+            // 
+            // BTNWest
+            // 
+            this.BTNWest.Enabled = false;
+            this.BTNWest.Location = new System.Drawing.Point(6, 88);
+            this.BTNWest.Name = "BTNWest";
+            this.BTNWest.Size = new System.Drawing.Size(75, 34);
+            this.BTNWest.TabIndex = 3;
+            this.BTNWest.Text = "West";
+            this.BTNWest.UseVisualStyleBackColor = true;
+            // 
             // BTNEast
             // 
-            this.BTNEast.Location = new System.Drawing.Point(127, 88);
+            this.BTNEast.Location = new System.Drawing.Point(179, 88);
             this.BTNEast.Name = "BTNEast";
             this.BTNEast.Size = new System.Drawing.Size(75, 34);
             this.BTNEast.TabIndex = 2;
@@ -70,7 +91,7 @@
             // 
             // BTNSouth
             // 
-            this.BTNSouth.Location = new System.Drawing.Point(74, 128);
+            this.BTNSouth.Location = new System.Drawing.Point(92, 143);
             this.BTNSouth.Name = "BTNSouth";
             this.BTNSouth.Size = new System.Drawing.Size(75, 31);
             this.BTNSouth.TabIndex = 1;
@@ -132,33 +153,13 @@
             // 
             // BTNMain
             // 
-            this.BTNMain.Location = new System.Drawing.Point(835, 62);
+            this.BTNMain.Location = new System.Drawing.Point(90, 88);
             this.BTNMain.Name = "BTNMain";
-            this.BTNMain.Size = new System.Drawing.Size(88, 41);
+            this.BTNMain.Size = new System.Drawing.Size(77, 34);
             this.BTNMain.TabIndex = 4;
             this.BTNMain.Text = "Main";
             this.BTNMain.UseVisualStyleBackColor = true;
             this.BTNMain.Click += new System.EventHandler(this.BTNMain_Click);
-            // 
-            // BTNWest
-            // 
-            this.BTNWest.Enabled = false;
-            this.BTNWest.Location = new System.Drawing.Point(27, 88);
-            this.BTNWest.Name = "BTNWest";
-            this.BTNWest.Size = new System.Drawing.Size(75, 34);
-            this.BTNWest.TabIndex = 3;
-            this.BTNWest.Text = "West";
-            this.BTNWest.UseVisualStyleBackColor = true;
-            // 
-            // BTNNorth
-            // 
-            this.BTNNorth.Location = new System.Drawing.Point(74, 52);
-            this.BTNNorth.Name = "BTNNorth";
-            this.BTNNorth.Size = new System.Drawing.Size(81, 30);
-            this.BTNNorth.TabIndex = 4;
-            this.BTNNorth.Text = "North";
-            this.BTNNorth.UseVisualStyleBackColor = true;
-            this.BTNNorth.Click += new System.EventHandler(this.BTNNorth_Click);
             // 
             // FRMWest
             // 
@@ -167,7 +168,6 @@
             this.BackgroundImage = global::Moonbase.Properties.Resources.Lab;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(2026, 968);
-            this.Controls.Add(this.BTNMain);
             this.Controls.Add(this.GBInfoWest);
             this.Controls.Add(this.GBNav);
             this.Name = "FRMWest";
