@@ -16,27 +16,31 @@ namespace Moonbase
         // Created variable for log file
         private const string LogFilePath = "log.txt";
 
-        String[] northDetails = new string[3]
-        {   // Background path
-            "Livingquarters.jpg", 
-             // Location name
-            "Living Quarters",
-            // Location Description
-            "Arriving to the North part of the moonbase there are several living quarters. There is a ladder that leads up to a comfy bed. Plenty of storage for clothes and other personal items.\r\n\r\nComfortable lounging area to do all sorts of hobbies like reading. A rug in the middle that's comfortable to the touch. Seems like a very nice area to live.\r\n", 
-        };
+        // Instance of northroomDetails to hold the north room details
+        private northroomDetails northDetails;
         // Constructor for the FRMNorth form
         public FRMNorth()
         {
             InitializeComponent();
+            // Initialize the northroomdetails object with the north room's information
+            northDetails = new northroomDetails(
+            // Background path
+            "Livingquarters.jpg",
+            // Location name
+            "Living Quarters",
+            // Location Description
+            "Arriving to the North part of the moonbase there are several living quarters. There is a ladder that leads up to a comfy bed. Plenty of storage for clothes and other personal items.\r\n\r\nComfortable lounging area to do all sorts of hobbies like reading. A rug in the middle that's comfortable to the touch. Seems like a very nice area to live.\r\n"
+                );
+            // Load the north room details into the form
             LoadNorthDetails();
         }
 
-        // Method to Load Details
+        // Method to load details into the form controls
         private void LoadNorthDetails()
         {
-            GBInfoNorth.Text = northDetails[0].ToString(); // Assign first element of Array
-            TBRoomInfoNorth.Text = northDetails[1].ToString(); // Assign second element of Array
-            TBRoomDesNorth.Text = northDetails[2].ToString(); // Assign third element of Array
+            GBInfoNorth.Text = northDetails.BackgroundPath;
+            TBRoomInfoNorth.Text = northDetails.LocationName;
+            TBRoomDesNorth.Text = northDetails.LocationDescription;
         }
         // West button click event
         private void BTNWest_Click(object sender, EventArgs e)
@@ -84,4 +88,20 @@ namespace Moonbase
         }
     }
 }
+    // Class to encapsulate the details of a room
+    public class northroomDetails
+    {
+        // Properties to store room details
+        public string BackgroundPath { get; private set; }
+        public string LocationName { get; private set; }
+        public string LocationDescription { get; private set; }
+
+        // Constructor to initialize the room details
+        public northroomDetails(string backgroundPath, string locationName, string locationDescription)
+        {
+            BackgroundPath = backgroundPath;
+            LocationName = locationName;
+            LocationDescription = locationDescription;
+        }
+    }
 }

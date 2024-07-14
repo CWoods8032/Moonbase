@@ -16,27 +16,30 @@ namespace Moonbase
     {
         // Created variable for log file
         private const string LogFilePath = "log.txt";
-
-        String[] westDetails = new string[3]
-        {    // Background path
+        // Instance of westroomDetails to hold the west room details
+        private westroomDetails westDetails;
+        public FRMWest()
+        {
+            InitializeComponent();
+            // Initialize the westroomDetails object with the west room's information 
+            westDetails = new westroomDetails(
+            // Background path
             "Lab.jpg",
             // Location name
             "Labratory",
             // Location Description
-            "Arriving on the west side has a full blown lab with all the bells and whistles. This is where all the magic happens. It seems to be quite busy as people are walking in and out constantly.\r\n\r\nIt has several high tech computers, vials, tubes, virtual screens and so on. It seems like everyone is happy with their work and believe they are making a difference. Not sure exactly what's being worked on and everyone says its top secret.\r\n",
-        };
-        public FRMWest()
-        {
-            InitializeComponent();
+            "Arriving on the west side has a full blown lab with all the bells and whistles. This is where all the magic happens. It seems to be quite busy as people are walking in and out constantly.\r\n\r\nIt has several high tech computers, vials, tubes, virtual screens and so on. It seems like everyone is happy with their work and believe they are making a difference. Not sure exactly what's being worked on and everyone says its top secret.\r\n"
+                );
+            // Load the west room details into the form
             LoadWestDetails();
         }
 
-        // Method to Load Details
+        // Method to load details into the form controls
         private void LoadWestDetails()
         {
-            GBInfoWest.Text = westDetails[0].ToString(); // Assigns first element of Array
-            TBRoomInfoWest.Text = westDetails[1].ToString(); // Assigns second element of Array
-            TBRoomDesWest.Text = westDetails[2].ToString(); // Assings third element of Array
+            GBInfoWest.Text = westDetails.BackgroundPath; // Set background image path
+            TBRoomInfoWest.Text = westDetails.LocationName; // Set location name
+            TBRoomDesWest.Text = westDetails.LocationDescription; // Set location description
         }
         // Main button click event
         private void BTNMain_Click(object sender, EventArgs e)
@@ -77,6 +80,23 @@ namespace Moonbase
             {
                 writer.WriteLine(formName); // Write the form name to the log file
             }
+        }
+    }
+
+    // Class to encapusulate the details of a room
+    public class westroomDetails
+    {
+        // Properties to store room details
+        public string BackgroundPath { get; private set; }
+        public string LocationName { get; private set; }
+        public string LocationDescription { get; private set; }
+
+        // Constructor to initialize the room details
+        public westroomDetails(string backgroundPath, string locationName, string locationDescription)
+        {
+            BackgroundPath = backgroundPath;
+            LocationName = locationName;
+            LocationDescription = locationDescription;
         }
     }
 }

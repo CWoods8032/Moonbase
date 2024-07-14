@@ -16,27 +16,33 @@ namespace Moonbase
         // Created variable for log file
         private const string LogFilePath = "log.txt";
 
-        String[] southDetails = new string[3]
-        {    // Background path
-            "Moonbaseentrance.jpg",
-            // Location name
-            "Main Entrance",
-            // Location Description
-            "To the South of main is the main entrance to the moonbase. It has spacesuits, first aid, bathrooms and so on. Researchers can go outside to investigate the moon or maybe just bounce around.\r\n\r\nIt also keeps the number of personnel that are currently in out at this moment. Keeping track of individuals is important. Especially when it comes to allowing people on the moons surface. The outside has vehicles waiting as a form of transportation.\r\n", 
-        };
+        // Instance of southroomDetails to hold the south room details
+        private southroomDetails southDetails;
+
         // Constructor for the FRMSouth form
         public FRMSouth()
         {
             InitializeComponent();
-            LoadSouthDetails();
+            // Initialize the southroomDetails object with the south room's information
+            southDetails = new southroomDetails
+                (
+            // Background path
+            "Moonbaseentrance.jpg",
+            // Location name
+            "Main Entrance",
+            // Location Description
+            "To the South of main is the main entrance to the moonbase. It has spacesuits, first aid, bathrooms and so on. Researchers can go outside to investigate the moon or maybe just bounce around.\r\n\r\nIt also keeps the number of personnel that are currently in out at this moment. Keeping track of individuals is important. Especially when it comes to allowing people on the moons surface. The outside has vehicles waiting as a form of transportation.\r\n"
+                );
+                // Load the south room details into the form
+                LoadSouthDetails();
         }
 
-        // Method to Load Details
+        // Method to load details into the form controls
         private void LoadSouthDetails()
         {
-            GBInfoSouth.Text = southDetails[0].ToString(); // Assigns first element of Array
-            TBRoomInfoSouth.Text = southDetails[1].ToString(); // Assigns second element of Array
-            TBRoomDesSouth.Text = southDetails[2].ToString(); // Assigns third element of Array
+            GBInfoSouth.Text = southDetails.BackgroundPath;
+            TBRoomInfoSouth.Text = southDetails.LocationName;
+            TBRoomDesSouth.Text = southDetails.LocationDescription;
         }
         // Main button click event
         private void BTNMain_Click(object sender, EventArgs e)
@@ -77,6 +83,23 @@ namespace Moonbase
             {
                 writer.WriteLine(formName); // Write the form name to the log file
             }
+        }
+    }
+
+    // Class to encapsulate the details of a room
+    public class southroomDetails
+    {
+        // Properties to store room details
+        public string BackgroundPath { get; private set; }
+        public string LocationName { get; private set; }
+        public string LocationDescription { get; private set; }
+
+        // Constructor to initialize the room details
+        public southroomDetails(string backgroundPath, string locationName, string locationDescription)
+        {
+            BackgroundPath = backgroundPath;
+            LocationName = locationName;
+            LocationDescription = locationDescription;
         }
     }
 }

@@ -16,27 +16,31 @@ namespace Moonbase
         // Created variable for log file
         private const string LogFilePath = "log.txt";
 
-        String[] eastDetails = new string[3]
-        {    // Background path
-            "Kitchen.jpg",
-            // Location name
-            "Kitchen",
-            // Location description
-            "The East side of the base has the most updated kitchen I have ever saw. It's controlled by an artificial intelligence that can help you make food. Has several stoves and ovens. A refrigerator that is filled with all sorts of goodies.\r\n\r\nThe AI also helps keep this place clean so we don't have to worry about clean up. Everything is properly disposed of so it doesn't litter the moons surface. I love that it supports staying green.\r\n", 
-        };
+        // Instance of eastroomDetails to hold the east room details
+        private eastroomDetails eastDetails;
         // Constructor for the FRMEast form
         public FRMEast()
         {
             InitializeComponent();
+            // Initialize the eastroomDetails object with the main room's information
+            eastDetails = new eastroomDetails( 
+             // Background path
+            "Kitchen.jpg",
+            // Location name
+            "Kitchen",
+            // Location description
+            "The East side of the base has the most updated kitchen I have ever saw. It's controlled by an artificial intelligence that can help you make food. Has several stoves and ovens. A refrigerator that is filled with all sorts of goodies.\r\n\r\nThe AI also helps keep this place clean so we don't have to worry about clean up. Everything is properly disposed of so it doesn't litter the moons surface. I love that it supports staying green.\r\n"
+                );
+            // Load the east room details into the form
             LoadEastDetails();
         }
 
-        // Method to load details
+        // Method to load details into the form controls
         private void LoadEastDetails()
         {
-            GBInfoEast.Text = eastDetails[0].ToString(); // Assigns first element of Array
-            TBRoomInfoEast.Text = eastDetails[1].ToString(); // Assigns second element of Array
-            TBRoomDesEast.Text = eastDetails[2].ToString(); // Assigns third element of Array
+            GBInfoEast.Text = eastDetails.BackgroundPath;
+            TBRoomInfoEast.Text = eastDetails.LocationName;
+            TBRoomDesEast.Text = eastDetails.LocationDescription;
         }
         // Main button click event
         private void BTNMain_Click(object sender, EventArgs e)
@@ -77,6 +81,23 @@ namespace Moonbase
             {
                 writer.WriteLine(formName); // Write the form name to the log file
             }
+        }
+    }
+
+    // Class to encapsulate the details of a room
+    public class eastroomDetails
+    {
+        // Properties to store room details
+        public string BackgroundPath { get; private set; }
+        public string LocationName { get; private set; }
+        public string LocationDescription { get; private set; }
+
+        // Constructor to initialize the room details
+        public eastroomDetails(string backgroundPath, string locationName, string locationDescription)
+        {
+            BackgroundPath = backgroundPath;
+            LocationName = locationName;
+            LocationDescription = locationDescription;
         }
     }
 }
