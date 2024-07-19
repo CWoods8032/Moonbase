@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FRMNorthEast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMNorthEast.Designer.cs">
+      <DependentUpon>FRMNorthEast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMNorthWest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMNorthWest.Designer.cs">
+      <DependentUpon>FRMNorthWest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMSouthEast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMSouthEast.Designer.cs">
+      <DependentUpon>FRMSouthEast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMSouthHallway.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMSouthHallway.Designer.cs">
+      <DependentUpon>FRMSouthHallway.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +88,23 @@
     <Compile Include="FRMNorth.Designer.cs">
       <DependentUpon>FRMNorth.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMNorthHallway.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMNorthHallway.Designer.cs">
+      <DependentUpon>FRMNorthHallway.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMSouth.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRMSouth.Designer.cs">
       <DependentUpon>FRMSouth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMSouthWest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMSouthWest.Designer.cs">
+      <DependentUpon>FRMSouthWest.cs</DependentUpon>
     </Compile>
     <Compile Include="FRMWest.cs">
       <SubType>Form</SubType>
@@ -87,8 +123,26 @@
     <EmbeddedResource Include="FRMNorth.resx">
       <DependentUpon>FRMNorth.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMNorthEast.resx">
+      <DependentUpon>FRMNorthEast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMNorthHallway.resx">
+      <DependentUpon>FRMNorthHallway.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMNorthWest.resx">
+      <DependentUpon>FRMNorthWest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMSouth.resx">
       <DependentUpon>FRMSouth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMSouthEast.resx">
+      <DependentUpon>FRMSouthEast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMSouthHallway.resx">
+      <DependentUpon>FRMSouthHallway.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMSouthWest.resx">
+      <DependentUpon>FRMSouthWest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMWest.resx">
       <DependentUpon>FRMWest.cs</DependentUpon>
@@ -130,6 +184,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Moonbaseentrance.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\vehicleDepot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\MaintenanceRoom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Greenhouse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\CommandCenter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\MoonbaseHallways.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

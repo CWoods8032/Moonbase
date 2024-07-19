@@ -82,6 +82,54 @@ namespace Moonbase
                 writer.WriteLine(formName); // Write the form name to the log file
             }
         }
+
+        private void BTNNorthWest_Click(object sender, EventArgs e)
+        {
+            LogFormNavigation("North West");
+            FRMNorthWest frm = new FRMNorthWest();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void BTNNorthEast_Click(object sender, EventArgs e)
+        {
+            LogFormNavigation("North East");
+            FRMNorthEast frm = new FRMNorthEast();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void BTNSouthWest_Click(object sender, EventArgs e)
+        {
+            LogFormNavigation("South East");
+            FRMSouthWest frm = new FRMSouthWest();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void BTNSouthEast_Click(object sender, EventArgs e)
+        {
+            LogFormNavigation("South West");
+            FRMSouthEast frm = new FRMSouthEast();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void BTNNorthHallway_Click(object sender, EventArgs e)
+        {
+            LogFormNavigation("North Hallway");
+            FRMNorthHallway frm = new FRMNorthHallway();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void BTNSouthHallway_Click(object sender, EventArgs e)
+        {
+            LogFormNavigation("South Hallway");
+            FRMSouthHallway frm = new FRMSouthHallway();
+            this.Hide();
+            frm.Show();           
+        }
     }
 
     // Class to encapsulate the details of a room

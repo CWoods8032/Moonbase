@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMEast));
             this.GBNav = new System.Windows.Forms.GroupBox();
+            this.BTNSouthWest = new System.Windows.Forms.Button();
+            this.BTNSouthEast = new System.Windows.Forms.Button();
+            this.BTNNorthEast = new System.Windows.Forms.Button();
+            this.BTNNorthWest = new System.Windows.Forms.Button();
+            this.BTNSouthHallway = new System.Windows.Forms.Button();
+            this.BTNNorthHallway = new System.Windows.Forms.Button();
+            this.BTNMain = new System.Windows.Forms.Button();
             this.BTNNorth = new System.Windows.Forms.Button();
             this.BTNWest = new System.Windows.Forms.Button();
             this.BTNEast = new System.Windows.Forms.Button();
@@ -39,7 +46,6 @@
             this.LABRoomDesEast = new System.Windows.Forms.Label();
             this.TBRoomInfoEast = new System.Windows.Forms.TextBox();
             this.LABRoomEast = new System.Windows.Forms.Label();
-            this.BTNMain = new System.Windows.Forms.Button();
             this.GBNav.SuspendLayout();
             this.GBInfoEast.SuspendLayout();
             this.SuspendLayout();
@@ -47,23 +53,99 @@
             // GBNav
             // 
             this.GBNav.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.GBNav.Controls.Add(this.BTNSouthWest);
+            this.GBNav.Controls.Add(this.BTNSouthEast);
+            this.GBNav.Controls.Add(this.BTNNorthEast);
+            this.GBNav.Controls.Add(this.BTNNorthWest);
+            this.GBNav.Controls.Add(this.BTNSouthHallway);
+            this.GBNav.Controls.Add(this.BTNNorthHallway);
             this.GBNav.Controls.Add(this.BTNMain);
             this.GBNav.Controls.Add(this.BTNNorth);
             this.GBNav.Controls.Add(this.BTNWest);
             this.GBNav.Controls.Add(this.BTNEast);
             this.GBNav.Controls.Add(this.BTNSouth);
-            this.GBNav.Location = new System.Drawing.Point(12, 62);
+            this.GBNav.Location = new System.Drawing.Point(12, 12);
             this.GBNav.Name = "GBNav";
-            this.GBNav.Size = new System.Drawing.Size(259, 198);
+            this.GBNav.Size = new System.Drawing.Size(342, 282);
             this.GBNav.TabIndex = 2;
             this.GBNav.TabStop = false;
             this.GBNav.Text = "Personal Nav Device";
             // 
+            // BTNSouthWest
+            // 
+            this.BTNSouthWest.Location = new System.Drawing.Point(261, 199);
+            this.BTNSouthWest.Name = "BTNSouthWest";
+            this.BTNSouthWest.Size = new System.Drawing.Size(75, 65);
+            this.BTNSouthWest.TabIndex = 12;
+            this.BTNSouthWest.Text = "South East";
+            this.BTNSouthWest.UseVisualStyleBackColor = true;
+            this.BTNSouthWest.Click += new System.EventHandler(this.BTNSouthWest_Click);
+            // 
+            // BTNSouthEast
+            // 
+            this.BTNSouthEast.Location = new System.Drawing.Point(6, 200);
+            this.BTNSouthEast.Name = "BTNSouthEast";
+            this.BTNSouthEast.Size = new System.Drawing.Size(75, 65);
+            this.BTNSouthEast.TabIndex = 11;
+            this.BTNSouthEast.Text = "South West";
+            this.BTNSouthEast.UseVisualStyleBackColor = true;
+            this.BTNSouthEast.Click += new System.EventHandler(this.BTNSouthEast_Click);
+            // 
+            // BTNNorthEast
+            // 
+            this.BTNNorthEast.Location = new System.Drawing.Point(261, 39);
+            this.BTNNorthEast.Name = "BTNNorthEast";
+            this.BTNNorthEast.Size = new System.Drawing.Size(75, 65);
+            this.BTNNorthEast.TabIndex = 9;
+            this.BTNNorthEast.Text = "North East";
+            this.BTNNorthEast.UseVisualStyleBackColor = true;
+            this.BTNNorthEast.Click += new System.EventHandler(this.BTNNorthEast_Click);
+            // 
+            // BTNNorthWest
+            // 
+            this.BTNNorthWest.Location = new System.Drawing.Point(6, 39);
+            this.BTNNorthWest.Name = "BTNNorthWest";
+            this.BTNNorthWest.Size = new System.Drawing.Size(75, 65);
+            this.BTNNorthWest.TabIndex = 8;
+            this.BTNNorthWest.Text = "North West";
+            this.BTNNorthWest.UseVisualStyleBackColor = true;
+            this.BTNNorthWest.Click += new System.EventHandler(this.BTNNorthWest_Click);
+            // 
+            // BTNSouthHallway
+            // 
+            this.BTNSouthHallway.Location = new System.Drawing.Point(125, 187);
+            this.BTNSouthHallway.Name = "BTNSouthHallway";
+            this.BTNSouthHallway.Size = new System.Drawing.Size(84, 34);
+            this.BTNSouthHallway.TabIndex = 7;
+            this.BTNSouthHallway.Text = "Hallway";
+            this.BTNSouthHallway.UseVisualStyleBackColor = true;
+            this.BTNSouthHallway.Click += new System.EventHandler(this.BTNSouthHallway_Click);
+            // 
+            // BTNNorthHallway
+            // 
+            this.BTNNorthHallway.Location = new System.Drawing.Point(125, 77);
+            this.BTNNorthHallway.Name = "BTNNorthHallway";
+            this.BTNNorthHallway.Size = new System.Drawing.Size(84, 34);
+            this.BTNNorthHallway.TabIndex = 6;
+            this.BTNNorthHallway.Text = "Hallway";
+            this.BTNNorthHallway.UseVisualStyleBackColor = true;
+            this.BTNNorthHallway.Click += new System.EventHandler(this.BTNNorthHallway_Click);
+            // 
+            // BTNMain
+            // 
+            this.BTNMain.Location = new System.Drawing.Point(129, 129);
+            this.BTNMain.Name = "BTNMain";
+            this.BTNMain.Size = new System.Drawing.Size(75, 34);
+            this.BTNMain.TabIndex = 4;
+            this.BTNMain.Text = "Main";
+            this.BTNMain.UseVisualStyleBackColor = true;
+            this.BTNMain.Click += new System.EventHandler(this.BTNMain_Click);
+            // 
             // BTNNorth
             // 
-            this.BTNNorth.Location = new System.Drawing.Point(91, 35);
+            this.BTNNorth.Location = new System.Drawing.Point(129, 25);
             this.BTNNorth.Name = "BTNNorth";
-            this.BTNNorth.Size = new System.Drawing.Size(76, 31);
+            this.BTNNorth.Size = new System.Drawing.Size(75, 34);
             this.BTNNorth.TabIndex = 4;
             this.BTNNorth.Text = "North";
             this.BTNNorth.UseVisualStyleBackColor = true;
@@ -71,7 +153,7 @@
             // 
             // BTNWest
             // 
-            this.BTNWest.Location = new System.Drawing.Point(6, 88);
+            this.BTNWest.Location = new System.Drawing.Point(6, 129);
             this.BTNWest.Name = "BTNWest";
             this.BTNWest.Size = new System.Drawing.Size(75, 34);
             this.BTNWest.TabIndex = 3;
@@ -82,7 +164,7 @@
             // BTNEast
             // 
             this.BTNEast.Enabled = false;
-            this.BTNEast.Location = new System.Drawing.Point(179, 88);
+            this.BTNEast.Location = new System.Drawing.Point(261, 129);
             this.BTNEast.Name = "BTNEast";
             this.BTNEast.Size = new System.Drawing.Size(75, 34);
             this.BTNEast.TabIndex = 2;
@@ -91,9 +173,9 @@
             // 
             // BTNSouth
             // 
-            this.BTNSouth.Location = new System.Drawing.Point(92, 143);
+            this.BTNSouth.Location = new System.Drawing.Point(129, 242);
             this.BTNSouth.Name = "BTNSouth";
-            this.BTNSouth.Size = new System.Drawing.Size(75, 31);
+            this.BTNSouth.Size = new System.Drawing.Size(75, 34);
             this.BTNSouth.TabIndex = 1;
             this.BTNSouth.Text = "South";
             this.BTNSouth.UseVisualStyleBackColor = true;
@@ -106,7 +188,7 @@
             this.GBInfoEast.Controls.Add(this.LABRoomDesEast);
             this.GBInfoEast.Controls.Add(this.TBRoomInfoEast);
             this.GBInfoEast.Controls.Add(this.LABRoomEast);
-            this.GBInfoEast.Location = new System.Drawing.Point(1474, 62);
+            this.GBInfoEast.Location = new System.Drawing.Point(1474, 12);
             this.GBInfoEast.Name = "GBInfoEast";
             this.GBInfoEast.Size = new System.Drawing.Size(540, 548);
             this.GBInfoEast.TabIndex = 3;
@@ -150,16 +232,6 @@
             this.LABRoomEast.TabIndex = 0;
             this.LABRoomEast.Text = "Room Name";
             // 
-            // BTNMain
-            // 
-            this.BTNMain.Location = new System.Drawing.Point(90, 88);
-            this.BTNMain.Name = "BTNMain";
-            this.BTNMain.Size = new System.Drawing.Size(77, 34);
-            this.BTNMain.TabIndex = 4;
-            this.BTNMain.Text = "Main";
-            this.BTNMain.UseVisualStyleBackColor = true;
-            this.BTNMain.Click += new System.EventHandler(this.BTNMain_Click);
-            // 
             // FRMEast
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -191,5 +263,11 @@
         private System.Windows.Forms.Label LABRoomEast;
         private System.Windows.Forms.Button BTNMain;
         private System.Windows.Forms.Button BTNNorth;
+        private System.Windows.Forms.Button BTNNorthHallway;
+        private System.Windows.Forms.Button BTNSouthHallway;
+        private System.Windows.Forms.Button BTNNorthWest;
+        private System.Windows.Forms.Button BTNNorthEast;
+        private System.Windows.Forms.Button BTNSouthEast;
+        private System.Windows.Forms.Button BTNSouthWest;
     }
 }

@@ -63,6 +63,26 @@ namespace Moonbase.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CommandCenter {
+            get {
+                object obj = ResourceManager.GetObject("CommandCenter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Greenhouse {
+            get {
+                object obj = ResourceManager.GetObject("Greenhouse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Kitchen {
             get {
                 object obj = ResourceManager.GetObject("Kitchen", resourceCulture);
@@ -93,6 +113,16 @@ namespace Moonbase.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MaintenanceRoom {
+            get {
+                object obj = ResourceManager.GetObject("MaintenanceRoom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Moonbase {
             get {
                 object obj = ResourceManager.GetObject("Moonbase", resourceCulture);
@@ -106,6 +136,26 @@ namespace Moonbase.Properties {
         internal static System.Drawing.Bitmap Moonbaseentrance {
             get {
                 object obj = ResourceManager.GetObject("Moonbaseentrance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MoonbaseHallways {
+            get {
+                object obj = ResourceManager.GetObject("MoonbaseHallways", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vehicleDepot {
+            get {
+                object obj = ResourceManager.GetObject("vehicleDepot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

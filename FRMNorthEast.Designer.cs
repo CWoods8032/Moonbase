@@ -1,6 +1,6 @@
 ﻿namespace Moonbase
 {
-    partial class FRMMain
+    partial class FRMNorthEast
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMMain));
-            this.GBInfoMain = new System.Windows.Forms.GroupBox();
-            this.LABRoomDesMain = new System.Windows.Forms.Label();
-            this.TBRoomDesMain = new System.Windows.Forms.TextBox();
-            this.TBRoomInfoMain = new System.Windows.Forms.TextBox();
-            this.LABRoomMain = new System.Windows.Forms.Label();
             this.GBNav = new System.Windows.Forms.GroupBox();
             this.BTNSouthWest = new System.Windows.Forms.Button();
             this.BTNSouthEast = new System.Windows.Forms.Button();
@@ -46,61 +40,14 @@
             this.BTNSouthHallway = new System.Windows.Forms.Button();
             this.BTNNorth = new System.Windows.Forms.Button();
             this.BTNNorthHallway = new System.Windows.Forms.Button();
-            this.CBDay = new System.Windows.Forms.ComboBox();
-            this.GBInfoMain.SuspendLayout();
+            this.GBInfoNE = new System.Windows.Forms.GroupBox();
+            this.TBRoomDesNE = new System.Windows.Forms.TextBox();
+            this.LABRoomDesNE = new System.Windows.Forms.Label();
+            this.TBRoomInfoNE = new System.Windows.Forms.TextBox();
+            this.LABRoomNE = new System.Windows.Forms.Label();
             this.GBNav.SuspendLayout();
+            this.GBInfoNE.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // GBInfoMain
-            // 
-            this.GBInfoMain.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.GBInfoMain.Controls.Add(this.LABRoomDesMain);
-            this.GBInfoMain.Controls.Add(this.TBRoomDesMain);
-            this.GBInfoMain.Controls.Add(this.TBRoomInfoMain);
-            this.GBInfoMain.Controls.Add(this.LABRoomMain);
-            this.GBInfoMain.Location = new System.Drawing.Point(1474, 12);
-            this.GBInfoMain.Name = "GBInfoMain";
-            this.GBInfoMain.Size = new System.Drawing.Size(540, 548);
-            this.GBInfoMain.TabIndex = 0;
-            this.GBInfoMain.TabStop = false;
-            this.GBInfoMain.Text = "Location Information";
-            // 
-            // LABRoomDesMain
-            // 
-            this.LABRoomDesMain.AutoSize = true;
-            this.LABRoomDesMain.Location = new System.Drawing.Point(34, 120);
-            this.LABRoomDesMain.Name = "LABRoomDesMain";
-            this.LABRoomDesMain.Size = new System.Drawing.Size(136, 20);
-            this.LABRoomDesMain.TabIndex = 3;
-            this.LABRoomDesMain.Text = "Room Description";
-            // 
-            // TBRoomDesMain
-            // 
-            this.TBRoomDesMain.Location = new System.Drawing.Point(36, 146);
-            this.TBRoomDesMain.Multiline = true;
-            this.TBRoomDesMain.Name = "TBRoomDesMain";
-            this.TBRoomDesMain.ReadOnly = true;
-            this.TBRoomDesMain.Size = new System.Drawing.Size(472, 367);
-            this.TBRoomDesMain.TabIndex = 2;
-            this.TBRoomDesMain.Text = resources.GetString("TBRoomDesMain.Text");
-            // 
-            // TBRoomInfoMain
-            // 
-            this.TBRoomInfoMain.Location = new System.Drawing.Point(36, 63);
-            this.TBRoomInfoMain.Name = "TBRoomInfoMain";
-            this.TBRoomInfoMain.ReadOnly = true;
-            this.TBRoomInfoMain.Size = new System.Drawing.Size(185, 26);
-            this.TBRoomInfoMain.TabIndex = 1;
-            this.TBRoomInfoMain.Text = "Entertainment Room";
-            // 
-            // LABRoomMain
-            // 
-            this.LABRoomMain.AutoSize = true;
-            this.LABRoomMain.Location = new System.Drawing.Point(32, 39);
-            this.LABRoomMain.Name = "LABRoomMain";
-            this.LABRoomMain.Size = new System.Drawing.Size(98, 20);
-            this.LABRoomMain.TabIndex = 0;
-            this.LABRoomMain.Text = "Room Name";
             // 
             // GBNav
             // 
@@ -119,7 +66,7 @@
             this.GBNav.Location = new System.Drawing.Point(12, 12);
             this.GBNav.Name = "GBNav";
             this.GBNav.Size = new System.Drawing.Size(342, 282);
-            this.GBNav.TabIndex = 1;
+            this.GBNav.TabIndex = 2;
             this.GBNav.TabStop = false;
             this.GBNav.Text = "Personal Nav Device";
             // 
@@ -152,6 +99,7 @@
             this.BTNMain.TabIndex = 4;
             this.BTNMain.Text = "Main";
             this.BTNMain.UseVisualStyleBackColor = true;
+            this.BTNMain.Click += new System.EventHandler(this.BTNMain_Click);
             // 
             // BTNWest
             // 
@@ -165,6 +113,7 @@
             // 
             // BTNNorthEast
             // 
+            this.BTNNorthEast.Enabled = false;
             this.BTNNorthEast.Location = new System.Drawing.Point(261, 39);
             this.BTNNorthEast.Name = "BTNNorthEast";
             this.BTNNorthEast.Size = new System.Drawing.Size(75, 65);
@@ -233,53 +182,94 @@
             this.BTNNorthHallway.UseVisualStyleBackColor = true;
             this.BTNNorthHallway.Click += new System.EventHandler(this.BTNNorthHallway_Click);
             // 
-            // CBDay
+            // GBInfoNE
             // 
-            this.CBDay.FormattingEnabled = true;
-            this.CBDay.Location = new System.Drawing.Point(1474, 599);
-            this.CBDay.Name = "CBDay";
-            this.CBDay.Size = new System.Drawing.Size(540, 28);
-            this.CBDay.TabIndex = 2;
+            this.GBInfoNE.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.GBInfoNE.Controls.Add(this.TBRoomDesNE);
+            this.GBInfoNE.Controls.Add(this.LABRoomDesNE);
+            this.GBInfoNE.Controls.Add(this.TBRoomInfoNE);
+            this.GBInfoNE.Controls.Add(this.LABRoomNE);
+            this.GBInfoNE.Location = new System.Drawing.Point(1474, 12);
+            this.GBInfoNE.Name = "GBInfoNE";
+            this.GBInfoNE.Size = new System.Drawing.Size(540, 548);
+            this.GBInfoNE.TabIndex = 4;
+            this.GBInfoNE.TabStop = false;
+            this.GBInfoNE.Text = "Location Information";
             // 
-            // FRMMain
+            // TBRoomDesNE
+            // 
+            this.TBRoomDesNE.Location = new System.Drawing.Point(39, 143);
+            this.TBRoomDesNE.Multiline = true;
+            this.TBRoomDesNE.Name = "TBRoomDesNE";
+            this.TBRoomDesNE.ReadOnly = true;
+            this.TBRoomDesNE.Size = new System.Drawing.Size(472, 367);
+            this.TBRoomDesNE.TabIndex = 3;
+            this.TBRoomDesNE.Text = "There is a number of plants, fruits and vegetables growing here. It\'s also in zer" +
+    "o gravity so plants are growing everywhere. This supplies the lab and kitchen.";
+            // 
+            // LABRoomDesNE
+            // 
+            this.LABRoomDesNE.AutoSize = true;
+            this.LABRoomDesNE.Location = new System.Drawing.Point(35, 120);
+            this.LABRoomDesNE.Name = "LABRoomDesNE";
+            this.LABRoomDesNE.Size = new System.Drawing.Size(136, 20);
+            this.LABRoomDesNE.TabIndex = 2;
+            this.LABRoomDesNE.Text = "Room Description";
+            // 
+            // TBRoomInfoNE
+            // 
+            this.TBRoomInfoNE.Location = new System.Drawing.Point(39, 63);
+            this.TBRoomInfoNE.Name = "TBRoomInfoNE";
+            this.TBRoomInfoNE.ReadOnly = true;
+            this.TBRoomInfoNE.Size = new System.Drawing.Size(185, 26);
+            this.TBRoomInfoNE.TabIndex = 1;
+            this.TBRoomInfoNE.Text = "Greenhouse";
+            // 
+            // LABRoomNE
+            // 
+            this.LABRoomNE.AutoSize = true;
+            this.LABRoomNE.Location = new System.Drawing.Point(35, 40);
+            this.LABRoomNE.Name = "LABRoomNE";
+            this.LABRoomNE.Size = new System.Drawing.Size(98, 20);
+            this.LABRoomNE.TabIndex = 0;
+            this.LABRoomNE.Text = "Room Name";
+            // 
+            // FRMNorthEast
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Moonbase.Properties.Resources.Moonbase;
+            this.BackgroundImage = global::Moonbase.Properties.Resources.Greenhouse;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(2026, 968);
-            this.Controls.Add(this.CBDay);
+            this.Controls.Add(this.GBInfoNE);
             this.Controls.Add(this.GBNav);
-            this.Controls.Add(this.GBInfoMain);
-            this.Name = "FRMMain";
+            this.Name = "FRMNorthEast";
             this.Text = "Moonbase Zero!";
-            this.GBInfoMain.ResumeLayout(false);
-            this.GBInfoMain.PerformLayout();
             this.GBNav.ResumeLayout(false);
+            this.GBInfoNE.ResumeLayout(false);
+            this.GBInfoNE.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox GBInfoMain;
-        private System.Windows.Forms.TextBox TBRoomInfoMain;
-        private System.Windows.Forms.Label LABRoomMain;
-        private System.Windows.Forms.Label LABRoomDesMain;
-        private System.Windows.Forms.TextBox TBRoomDesMain;
         private System.Windows.Forms.GroupBox GBNav;
-        private System.Windows.Forms.Button BTNWest;
-        private System.Windows.Forms.Button BTNEast;
-        private System.Windows.Forms.Button BTNSouth;
-        private System.Windows.Forms.Button BTNNorth;
-        private System.Windows.Forms.Button BTNMain;
-        private System.Windows.Forms.Button BTNNorthHallway;
-        private System.Windows.Forms.Button BTNSouthHallway;
-        private System.Windows.Forms.Button BTNNorthWest;
-        private System.Windows.Forms.Button BTNNorthEast;
         private System.Windows.Forms.Button BTNSouthWest;
         private System.Windows.Forms.Button BTNSouthEast;
-        private System.Windows.Forms.ComboBox CBDay;
+        private System.Windows.Forms.Button BTNMain;
+        private System.Windows.Forms.Button BTNWest;
+        private System.Windows.Forms.Button BTNNorthEast;
+        private System.Windows.Forms.Button BTNEast;
+        private System.Windows.Forms.Button BTNNorthWest;
+        private System.Windows.Forms.Button BTNSouth;
+        private System.Windows.Forms.Button BTNSouthHallway;
+        private System.Windows.Forms.Button BTNNorth;
+        private System.Windows.Forms.Button BTNNorthHallway;
+        private System.Windows.Forms.GroupBox GBInfoNE;
+        private System.Windows.Forms.TextBox TBRoomDesNE;
+        private System.Windows.Forms.Label LABRoomDesNE;
+        private System.Windows.Forms.TextBox TBRoomInfoNE;
+        private System.Windows.Forms.Label LABRoomNE;
     }
 }
-

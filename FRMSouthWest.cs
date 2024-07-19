@@ -1,8 +1,8 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -12,62 +12,43 @@ using System.Windows.Forms;
 
 namespace Moonbase
 {
-    public partial class FRMMain : Form
+    public partial class FRMSouthWest : Form
     {
         // Created variable for log file
         private const string LogFilePath = "log.txt";
 
-        // Instance of mainroomDetails to hold the main room details
-        private mainroomDetails mainDetails;
+        // Instance of swroomDetails to hold the room details
+        private swroomDetails swDetails;
 
-        public FRMMain()
+        public FRMSouthWest()
         {
             InitializeComponent();
-            // Initialize the mainroomDetails object with the main room's information
-            mainDetails = new mainroomDetails(
-               "Moonbase.jpg",
-                "Entertainment Room",
-                "Walking into this room you can see chairs, tables, and a bar. The bar consists of all types of drinks in bags. The seated areas with tables have games of cards and checkers.\r\n\r\nYou can also choose any other board games if you wish. It seems rather busy and a very socializing experience.\r\n"
-            );
-            // Load the main room details into the form
-            LoadMainDetails();
+            // Initialize the swroomDetails object with the main room's information
+            swDetails = new swroomDetails(
+                "vehicleDepot.jpg",
+                "Vehicle Depot",
+                "This has a number of vehicles and maintainers inside. Tires and tools to help fix just about any vehicle they have. On the other side they have all sorts of parts if needed as well."
+                );
+            // Load the room details into the form
+            LoadSWDetails();
         }
-
-        
-
         // Method to load details into the form controls
-        private void LoadMainDetails()
+        private void LoadSWDetails()
         {
-            GBInfoMain.Text = mainDetails.BackgroundPath;
-            TBRoomInfoMain.Text = mainDetails.LocationName;
-            TBRoomDesMain.Text = mainDetails.LocationDescription;
+            GBInfoSW.Text = swDetails.BackgroundPath;
+            TBRoomInfoSW.Text = swDetails.LocationName;
+            TBRoomDesSW.Text = swDetails.LocationDescription;
         }
 
-        private void BTNNorth_Click( object sender, EventArgs e )
+        private void BTNMain_Click(object sender, EventArgs e)
         {
-            LogFormNavigation("North");
-            FRMNorth frm = new FRMNorth();
+            LogFormNavigation("Main");
+            FRMMain frm = new FRMMain();
             this.Hide();
             frm.Show();
         }
 
-        private void BTNWest_Click( object sender, EventArgs e )
-        {
-            LogFormNavigation("West");
-            FRMWest frm = new FRMWest();
-            this.Hide();
-            frm.Show();
-        }
-
-        private void BTNEast_Click( object sender, EventArgs e )
-        {
-            LogFormNavigation("East");
-            FRMEast frm = new FRMEast();
-            this.Hide();
-            frm.Show();
-        }
-
-        private void BTNSouth_Click( object sender, EventArgs e )
+        private void BTNSouth_Click(object sender, EventArgs e)
         {
             LogFormNavigation("South");
             FRMSouth frm = new FRMSouth();
@@ -75,12 +56,28 @@ namespace Moonbase
             frm.Show();
         }
 
-        private void LogFormNavigation(string direction)
+        private void BTNWest_Click(object sender, EventArgs e)
         {
-            using(StreamWriter writer = new StreamWriter(LogFilePath, true))
-            {
-                writer.WriteLine(direction);
-            }
+            LogFormNavigation("West");
+            FRMWest frm = new FRMWest();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void BTNEast_Click(object sender, EventArgs e)
+        {
+            LogFormNavigation("East");
+            FRMEast frm = new FRMEast();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void BTNNorth_Click(object sender, EventArgs e)
+        {
+            LogFormNavigation("North");
+            FRMNorth frm = new FRMNorth();
+            this.Hide();
+            frm.Show();
         }
 
         private void BTNNorthWest_Click(object sender, EventArgs e)
@@ -107,14 +104,6 @@ namespace Moonbase
             frm.Show();
         }
 
-        private void BTNSouthWest_Click(object sender, EventArgs e)
-        {
-            LogFormNavigation("South East");
-            FRMSouthWest frm = new FRMSouthWest();
-            this.Hide();
-            frm.Show();
-        }
-
         private void BTNNorthHallway_Click(object sender, EventArgs e)
         {
             LogFormNavigation("North Hallway");
@@ -130,10 +119,25 @@ namespace Moonbase
             this.Hide();
             frm.Show();
         }
-    }
 
+        private void LogFormNavigation(string direction)
+        {
+            using (StreamWriter writer = new StreamWriter(LogFilePath, true))
+            {
+                writer.WriteLine(direction);
+            }
+        }
+
+        private void BTNSouthWest_Click(object sender, EventArgs e)
+        {
+            LogFormNavigation("South East");
+            FRMSouthWest frm = new FRMSouthWest();
+            this.Hide();
+            frm.Show();
+        }
+    }
     // Class to encapsulate the details of a room
-    public class mainroomDetails
+    public class swroomDetails
     {
         // Properties to store room details
         public string BackgroundPath { get; private set; }
@@ -141,22 +145,11 @@ namespace Moonbase
         public string LocationDescription { get; private set; }
 
         // Constructor to initialize the room details
-        public mainroomDetails(string backgroundPath, string locationName, string locationDescription)
+        public swroomDetails(string backgroundPath, string locationName, string locationDescription)
         {
             BackgroundPath = backgroundPath;
             LocationName = locationName;
             LocationDescription = locationDescription;
         }
-        
-        
     }
 }
-
-
-        
-    
-
-
-
-    
- 
